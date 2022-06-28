@@ -1,26 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {MyInput} from "./components/MyInput/MyInput";
+import {MyAddItemField} from "./components/MyAddItemField/MyAddItemField";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    let [value, setValue] = useState<string>('')
+
+    // const onChangeCallback = (currentValue: string) => {
+    //     setValue(currentValue)
+    // }
+    const onClickCallback = (currentValue: string) => {
+        setValue(currentValue)
+        console.log(value)
+    }
+
+    return (
+        <div className="App">
+            {/*<MyInput/>*/}
+            {/*<MyAddItemField*/}
+            {/*    onClickCallback={onClickCallback}*/}
+            {/*/>*/}
+        </div>
+    );
 }
 
 export default App;
